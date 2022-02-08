@@ -242,13 +242,10 @@ export default class ConfirmPageContainer extends Component {
               ethGasPriceWarning={ethGasPriceWarning}
               hideTitle={hideTitle}
               supportsEIP1559V2={supportsEIP1559V2}
-<<<<<<< HEAD
               hasTopBorder={showAddToAddressDialog}
-=======
               showingHardwareConnectionContents={
                 showingHardwareConnectionContents
               }
->>>>>>> 085e317a4 (Implement hardware connectivity confirmation screens)
             />
           )}
           {shouldDisplayWarning && (
