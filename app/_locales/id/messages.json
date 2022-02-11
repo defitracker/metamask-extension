@@ -2329,6 +2329,9 @@
   "seedPhraseIntroSidebarBulletOne": {
     "message": "Simpan dalam pengelola kata sandi"
   },
+  "seedPhraseIntroSidebarBulletThree": {
+    "message": "Simpan di kotak deposito yang aman."
+  },
   "seedPhraseIntroSidebarBulletTwo": {
     "message": "Simpan di brankas bank."
   },
