@@ -493,7 +493,7 @@ export default class TransactionController extends EventEmitter {
             !txMeta.txParams.maxPriorityFeePerGas) ||
           txMeta.origin === 'metamask'
         ) {
-          txMeta.userFeeLevel = GAS_RECOMMENDATIONS.MEDIUM;
+          txMeta.userFeeLevel = GAS_RECOMMENDATIONS.HIGH;
         } else if (eip1559V2Enabled) {
           txMeta.userFeeLevel = PRIORITY_LEVELS.DAPP_SUGGESTED;
         } else {

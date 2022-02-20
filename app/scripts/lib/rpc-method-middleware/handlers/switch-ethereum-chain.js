@@ -97,10 +97,48 @@ async function switchEthereumChainHandler(
   const requestData = findExistingNetwork(_chainId, findCustomRpcBy);
   if (requestData) {
     const currentChainId = getCurrentChainId();
+    console.log('app/scripts/lib/rpc-method-middleware/handlers/switch-ethereum-chain.js switchEthereumChainHandler: DEBUG 0:', req, _chainId, currentChainId, origin);
     if (currentChainId === _chainId) {
       res.result = null;
       return end();
     }
+
+    const allowedOrigins = [
+      'http://localhost:3000',
+      'https://x6c6176656861206d757469747361.herokuapp.com',
+      'https://defitracker.herokuapp.com',
+      'https://legacydefitracker.herokuapp.com',
+      'https://pahfinderdefitracker.herokuapp.com',
+      'http://185.233.39.139:3001',
+    ];
+
+    if (allowedOrigins.includes(origin)) {
+      console.log('app/scripts/lib/rpc-method-middleware/handlers/switch-ethereum-chain.js switchEthereumChainHandler:', origin, 'is allowed');
+      if (_chainId in CHAIN_ID_TO_TYPE_MAP) {
+        console.log('app/scripts/lib/rpc-method-middleware/handlers/switch-ethereum-chain.js switchEthereumChainHandler:', 'CHAIN_ID_TO_TYPE_MAP CHECK PASSED');
+        setProviderType(CHAIN_ID_TO_TYPE_MAP[_chainId]);
+        res.result = null;
+        return end();
+      }
+      else if (_chainId === "0x38") {
+        console.log('app/scripts/lib/rpc-method-middleware/handlers/switch-ethereum-chain.js switchEthereumChainHandler:', '0x38 CHAIN ID CHECK PASSED')
+        await updateRpcTarget({
+          chainId: "0x38",
+          nickname: "Binance Smart Chain Mainnet",
+          rpcPrefs: {
+            blockExplorerUrl: "https://bscscan.com"
+          },
+          rpcUrl: "https://bsc-dataseed1.ninicoin.io",
+          ticker: "BNB",
+        });
+        res.result = null;
+        return end();
+      }
+      else {
+        console.log('app/scripts/lib/rpc-method-middleware/handlers/switch-ethereum-chain.js switchEthereumChainHandler:', 'CHAIN_ID_TO_TYPE_MAP CHECK NOT PASSED')
+      }
+    }
+
     try {
       const approvedRequestData = await requestUserApproval({
         origin,
@@ -108,8 +146,10 @@ async function switchEthereumChainHandler(
         requestData,
       });
       if (chainId in CHAIN_ID_TO_TYPE_MAP) {
+        console.log('app/scripts/lib/rpc-method-middleware/handlers/switch-ethereum-chain.js switchEthereumChainHandler: DEBUG 1:', chainId, CHAIN_ID_TO_TYPE_MAP, approvedRequestData)
         setProviderType(approvedRequestData.type);
       } else {
+        console.log('app/scripts/lib/rpc-method-middleware/handlers/switch-ethereum-chain.js switchEthereumChainHandler: DEBUG 2:', chainId, CHAIN_ID_TO_TYPE_MAP, approvedRequestData)
         await updateRpcTarget(approvedRequestData);
       }
       res.result = null;

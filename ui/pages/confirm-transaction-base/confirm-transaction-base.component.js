@@ -336,6 +336,8 @@ export default class ConfirmTransactionBase extends Component {
     const renderSimulationFailureWarning =
       hasSimulationError && !userAcknowledgedGasMissing;
 
+    console.log('ui/pages/confirm-transaction-base/confirm-transaction-base.component.js renderDetails():', this.context)
+
     const renderTotalMaxAmount = () => {
       if (
         primaryTotalTextOverrideMaxAmount === undefined &&
@@ -979,6 +981,7 @@ export default class ConfirmTransactionBase extends Component {
 
   render() {
     const { t } = this.context;
+    console.log('ui/pages/confirm-transaction-base/confirm-transaction-base.component.js render():', this)
     const {
       fromName,
       fromAddress,
