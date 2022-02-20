@@ -2612,6 +2612,9 @@
   "storePhrase": {
     "message": "Speichern Sie diesen Schlüssel in einem Passwortmanager wie 1Password."
   },
+  "stxFailure": {
+    "message": "Swap fehlgeschlagen"
+  },
   "submit": {
     "message": "Abschicken"
   },

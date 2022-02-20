@@ -2618,6 +2618,9 @@
   "storePhrase": {
     "message": "I-store ang phrase na ito sa isang password manager gaya ng 1Password."
   },
+  "stxFailure": {
+    "message": "Hindi matagumpay ang pag-swap"
+  },
   "submit": {
     "message": "Isumite"
   },

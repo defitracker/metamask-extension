@@ -2618,6 +2618,9 @@
   "storePhrase": {
     "message": "Сохраните эту фразу в диспетчере паролей, например, в 1Password."
   },
+  "stxFailure": {
+    "message": "Обмен не удался"
+  },
   "submit": {
     "message": "Отправить"
   },

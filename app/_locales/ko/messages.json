@@ -2618,6 +2618,9 @@
   "storePhrase": {
     "message": "이 구문을 1Password 같은 비밀번호 관리자에 저장하세요."
   },
+  "stxFailure": {
+    "message": "스왑 실패"
+  },
   "submit": {
     "message": "제출"
   },

@@ -2618,6 +2618,9 @@
   "storePhrase": {
     "message": "इस फ्रेज को 1Password जैसे किसी पासवर्ड मैनेजर में संग्रहीत करें।"
   },
+  "stxFailure": {
+    "message": "स्वैप विफल रहा"
+  },
   "submit": {
     "message": "सबमिट करें"
   },

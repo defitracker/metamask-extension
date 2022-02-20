@@ -2618,6 +2618,9 @@
   "storePhrase": {
     "message": "このフレーズを1Passwordのようなパスワードマネージャーに保存します。"
   },
+  "stxFailure": {
+    "message": "スワップに失敗しました"
+  },
   "submit": {
     "message": "送信"
   },

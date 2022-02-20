@@ -2618,6 +2618,9 @@
   "storePhrase": {
     "message": "Lưu trữ cụm mật khẩu này trong trình quản lý mật khẩu chẳng hạn như 1Password."
   },
+  "stxFailure": {
+    "message": "Hoán đổi không thành công"
+  },
   "submit": {
     "message": "Gửi"
   },

@@ -2618,6 +2618,9 @@
   "storePhrase": {
     "message": "Simpan frasa ini dalam pengelola kata sandi seperti 1Password."
   },
+  "stxFailure": {
+    "message": "Swap gagal"
+  },
   "submit": {
     "message": "Kirim"
   },
