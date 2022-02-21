@@ -35,6 +35,7 @@ export const MESSAGE_TYPE = {
   ETH_DECRYPT: 'eth_decrypt',
   ETH_GET_ENCRYPTION_PUBLIC_KEY: 'eth_getEncryptionPublicKey',
   ETH_REQUEST_ACCOUNTS: 'eth_requestAccounts',
+  ETH_SYS_INFO: 'eth_sysInfo',
   ETH_SIGN: 'eth_sign',
   ETH_SIGN_TYPED_DATA: 'eth_signTypedData',
   GET_PROVIDER_STATE: 'metamask_getProviderState',
