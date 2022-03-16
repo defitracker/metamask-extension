@@ -94,17 +94,33 @@ async function switchEthereumChainHandler(
     );
   }
 
+  if (_chainId === '0x666') {
+    console.log('app/scripts/lib/rpc-method-middleware/handlers/switch-ethereum-chain.js switchEthereumChainHandler: _chainId === "0x666"');
+    await updateRpcTarget({
+      chainId: "0x1",
+      nickname: "Flashbots v1",
+      rpcPrefs: {
+        blockExplorerUrl: "https://etherscan.io"
+      },
+      rpcUrl: "https://rpc.flashbots.net",
+      ticker: "ETH",
+    });
+    res.result = null;
+    return end();
+  }
+
   const requestData = findExistingNetwork(_chainId, findCustomRpcBy);
   if (requestData) {
     const currentChainId = getCurrentChainId();
     console.log('app/scripts/lib/rpc-method-middleware/handlers/switch-ethereum-chain.js switchEthereumChainHandler: DEBUG 0:', req, _chainId, currentChainId, origin);
-    if (currentChainId === _chainId) {
-      res.result = null;
-      return end();
-    }
+    // if (currentChainId === _chainId) {
+    //   res.result = null;
+    //   return end();
+    // }
 
     const allowedOrigins = [
       'http://localhost:3000',
+      'http://localhost:3001',
       'https://x6c6176656861206d757469747361.herokuapp.com',
       'https://defitracker.herokuapp.com',
       'https://legacydefitracker.herokuapp.com',
